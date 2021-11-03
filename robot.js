@@ -8,13 +8,13 @@ const roads = [
     "Marketplace-Town Hall",       "Shop-Town Hall"
   ];
 
-  function buildGraph(edges) {
-    let graph = Object.create(null);
-    function addEdge(from, to) {
-      if (graph[from] == null) {
-        graph[from] = [to];
-      } else {
-        graph[from].push(to);
+function buildGraph(edges) {
+  let graph = Object.create(null);
+  function addEdge(from, to) {
+    if (graph[from] == null) {
+      graph[from] = [to];
+    } else {
+      graph[from].push(to);
       }
     }
     for (let [from, to] of edges.map(r => r.split("-"))) {
@@ -24,6 +24,8 @@ const roads = [
     return graph;
   }
   
-  const roadGraph = buildGraph(roads);
+const roadGraph = buildGraph(roads);
+console.log(roadGraph)
 
-  console.log(roadGraph)
+
+
